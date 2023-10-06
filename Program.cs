@@ -49,7 +49,7 @@ internal class Program
 
 
         foreach(Police p in polices)
-            Console.WriteLine(Police);
+            Console.WriteLine(p.name);
 
         List<Policestation> policestation = new List<Policestation>();
 
