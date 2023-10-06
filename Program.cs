@@ -30,23 +30,34 @@ class Crime
         this.crime = crime;
     }
 }
-internal class Program
+class Reports
+{
+    public int reportNr;
+    private static int reportCounter = 1;
+    public Reports (int reportnr)
+    {
+        this.reportNr = reportNr;
+        this.reportNr = reportCounter++;
+    }
+}
+class Program
 {
     static void Main ()
     {
+        Console.WriteLine("Välkommen till Rapportsystem 80.");
         List<Police> polices = new List <Police>();
       
-        polices.Add(new Police("Bengt, Karlsson", 1001));
+        polices.Add(new Police("Bengt, Karlsson", 100145));
     
-        polices.Add(new Police("Orvar, Pettersson", 1002)); 
+        polices.Add(new Police("Orvar, Pettersson", 102302)); 
 
-        polices.Add(new Police("Lolita, Olsson", 1006));
+        polices.Add(new Police("Lolita, Olsson", 104506));
 
-        polices.Add(new Police("Roffe, Jansson", 1007));
+        polices.Add(new Police("Roffe, Jansson", 102307));
     
-        polices.Add(new Police("Janne, Pettersson", 1009)); 
+        polices.Add(new Police("Janne, Pettersson", 100989)); 
 
-        polices.Add(new Police("Felica, Mellgren", 1011));
+        polices.Add(new Police("Felicia, Mellgren", 116011));
 
 
         foreach(Police p in polices)
