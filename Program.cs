@@ -1,6 +1,7 @@
 ﻿﻿using System;
 using System.Diagnostics.Contracts;
 using System.Xml.Serialization;
+using System.Collections.Generic;
 class Police
 {
     public string name;
@@ -49,7 +50,7 @@ internal class Program
 
 
         foreach(Police p in polices)
-            Console.WriteLine(p.name);
+            Console.WriteLine("Polis: " + p.name + ", Tjänstenr: " + p.serviceNumber);
 
         List<Policestation> policestation = new List<Policestation>();
 
@@ -62,7 +63,7 @@ internal class Program
         policestation.Add(new Policestation("Angered"));
 
         foreach(Policestation m in policestation)
-            Console.WriteLine(m.policeSt);
+            Console.WriteLine("Polisstation: " + m.policeSt);
 
 
         List<Crime> crime = new List<Crime>();
@@ -84,7 +85,7 @@ internal class Program
         crime.Add(new Crime("Mord"));  
 
         foreach(Crime n in crime)
-            Console.WriteLine(n.crime);                
+            Console.WriteLine("Brott: " + n.crime);                
 
     }
 
