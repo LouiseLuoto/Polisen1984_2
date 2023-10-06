@@ -90,3 +90,13 @@ internal class Program
     }
 
 } 
+// Skap en meny
+    // val 1: Registrera utryckningar
+    // val 2: Skriva rapport
+    // val 3: Personal info. Samt reistrera ny personal.
+    // val 4: Informationsammanställning
+
+// Skapa rapport som innehåller rapportnummer + datum + polistation + beskrivning
+
+
+
