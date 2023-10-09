@@ -2,6 +2,27 @@
 using System.Diagnostics.Contracts;
 using System.Xml.Serialization;
 using System.Collections.Generic;
+
+class CallOuts
+{
+    int aDate;
+    public
+
+    Console.WriteLine(aDate.ToString("HH:mm"));
+
+    public enum Crime
+    {
+        Stöld,
+        Narkotikabrott, 
+        Brott,
+        Bedrägeri,
+        Misshandel,
+        Snatteri,
+        Skadegörelse,
+        Mord,
+        Skattebrott
+    }    
+}
 class Police
 {
     public string name;
@@ -22,14 +43,12 @@ class Policestation
         this.policeSt= policeSt;
     }
 }
-class Crime
-{
-    public string crime;
-    public Crime (string crime)
-    {
-        this.crime = crime;
-    }
-}
+
+
+    
+
+
+
 class Reports
 {
     public int reportNr;
@@ -95,8 +114,7 @@ class Program
 
         crime.Add(new Crime("Mord"));  
 
-        foreach(Crime n in crime)
-            Console.WriteLine("Brott: " + n.crime);                
+              
 
     }
 
