@@ -2,14 +2,15 @@
 using System.Diagnostics.Contracts;
 using System.Xml.Serialization;
 using System.Collections.Generic;
+using System.Collections;
 
-class CallOuts
+public class CallOut
 {
-    int aDate;
-    public
-
-    Console.WriteLine(aDate.ToString("HH:mm"));
-
+    string Police;
+    public CallOut (string Police)
+    {
+        this.Police = Police;
+    }
     public enum Crime
     {
         Stöld,
@@ -34,29 +35,24 @@ class Police
         this.serviceNumber = serviceNumber;
     }
 }
-class Policestation
-{
-    public string policeSt;
-
-    public Policestation(string policeSt)
-    {
-        this.policeSt= policeSt;
-    }
-}
-
-
-    
-
-
-
-class Reports
+class Report
 {
     public int reportNr;
     private static int reportCounter = 1;
-    public Reports (int reportnr)
+    public string policeSt;
+    public Report (int reportnr, string policeSt)
     {
         this.reportNr = reportNr;
         this.reportNr = reportCounter++;
+        this.policeSt = policeSt;
+    }
+    public enum Policestation
+    {
+        Norra, 
+        Gunnilse, 
+        Ale, 
+        Angered, 
+        City
     }
 }
 class Program
@@ -64,6 +60,9 @@ class Program
     static void Main ()
     {
         Console.WriteLine("Välkommen till Rapportsystem 80.");
+        DateTime dateTime = DateTime.Now;
+        Console.WriteLine(dateTime);
+        CallOut c = new CallOut(42);
         List<Police> polices = new List <Police>();
       
         polices.Add(new Police("Bengt, Karlsson", 100145));
@@ -78,46 +77,9 @@ class Program
 
         polices.Add(new Police("Felicia, Mellgren", 116011));
 
-
         foreach(Police p in polices)
             Console.WriteLine("Polis: " + p.name + ", Tjänstenr: " + p.serviceNumber);
-
-        List<Policestation> policestation = new List<Policestation>();
-
-        policestation.Add(new Policestation("Norra"));
-
-        policestation.Add(new Policestation("Gunnilse"));
-
-        policestation.Add(new Policestation("Ale"));
-
-        policestation.Add(new Policestation("Angered"));
-
-        foreach(Policestation m in policestation)
-            Console.WriteLine("Polisstation: " + m.policeSt);
-
-
-        List<Crime> crime = new List<Crime>();
-
-        crime.Add(new Crime("Stöld"));
-
-        crime.Add(new Crime("Bedrägeri"));
-
-        crime.Add(new Crime("Rattfylla"));
-
-        crime.Add(new Crime("Narkotikabrott"));
-
-        crime.Add(new Crime("Skadegörelse"));
-
-        crime.Add(new Crime("Misshandel"));
-
-        crime.Add(new Crime("Snatteri"));
-
-        crime.Add(new Crime("Mord"));  
-
-              
-
     }
-
 } 
 // Skap en meny
     // val 1: Registrera utryckningar
