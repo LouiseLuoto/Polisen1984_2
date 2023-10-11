@@ -62,7 +62,6 @@ class Program
         Console.WriteLine("Välkommen till Rapportsystem 80.");
         DateTime dateTime = DateTime.Now;
         Console.WriteLine(dateTime);
-        CallOut c = new CallOut(42);
         List<Police> polices = new List <Police>();
       
         polices.Add(new Police("Bengt, Karlsson", 100145));
