@@ -7,6 +7,7 @@ using System.Collections;
 public class CallOut
 {
     string Police;
+    
     public CallOut (string Police)
     {
         this.Police = Police;
@@ -28,7 +29,6 @@ class Police
 {
     public string name;
     public int serviceNumber;
-    
     public Police (string name, int serviceNumber)
     {
         this.name = name;
@@ -59,25 +59,50 @@ class Program
 {
     static void Main ()
     {
-        Console.WriteLine("Välkommen till Rapportsystem 80.");
-        DateTime dateTime = DateTime.Now;
-        Console.WriteLine(dateTime);
-        List<Police> polices = new List <Police>();
-      
-        polices.Add(new Police("Bengt, Karlsson", 100145));
-    
-        polices.Add(new Police("Orvar, Pettersson", 102302)); 
-
-        polices.Add(new Police("Lolita, Olsson", 104506));
-
-        polices.Add(new Police("Roffe, Jansson", 102307));
-    
-        polices.Add(new Police("Janne, Pettersson", 100989)); 
-
-        polices.Add(new Police("Felicia, Mellgren", 116011));
-
-        foreach(Police p in polices)
-            Console.WriteLine("Polis: " + p.name + ", Tjänstenr: " + p.serviceNumber);
+        bool isRunning = true;
+        while (isRunning)
+        {
+            Console.WriteLine("Välkommen till Rapportsystem 80.");
+            Console.WriteLine("[Re]gistrering av utryckningar");
+            Console.WriteLine("[R]apporter");
+            Console.WriteLine("[A]vsluta");
+            /*DateTime dateTime = DateTime.Now;
+            Console.WriteLine(dateTime);*/
+            List<Police> polices = new List <Police>();
+            polices.Add(new Police("Bengt, Karlsson", 100145));
+            polices.Add(new Police("Orvar, Pettersson", 102302)); 
+            polices.Add(new Police("Lolita, Olsson", 104506));
+            polices.Add(new Police("Roffe, Jansson", 102307));
+            polices.Add(new Police("Janne, Pettersson", 100989)); 
+            polices.Add(new Police("Felicia, Mellgren", 116011));
+            string choice = Console.ReadLine();
+            switch (choice)
+            {
+                case "re":
+                    Console.Write("Välj vilken polis som deltog: ");    //Hämta från lista
+                    string policechoice = Console.ReadLine();
+                    Console.Write("Vilken typ av brott: ");             //Hämta index från Crime
+                    string crime = Console.ReadLine();
+                    /*foreach(Police p in polices)
+                        Console.WriteLine("Polis: " + p.name + ", Tjänstenr: " + p.serviceNumber);
+                    Console.ReadKey();*/
+                    Console.Write("Tidpunkt för brottet med format HHMM: ");
+                    DateTime timeCrime = DateTime.Parse(Console.ReadLine());
+                    Console.Write("Plats för brottet: ");               
+                    string place = Console.ReadLine();
+                    break;
+                case "r":
+                    Console.Write("Skriv rapportnummer: ");
+                    int reportnr = int.Parse(Console.ReadLine());
+                    Console.Write("Skriv datum med format YY/MM/DD: ");
+                    DateTime date = DateTime.Parse(Console.ReadLine());
+                    break;
+                case "a":
+                    isRunning = false;
+                    break;
+            }
+            Console.ReadKey();
+        }
     }
 } 
 // Skap en meny
