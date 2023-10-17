@@ -1,9 +1,23 @@
-﻿public class Callout
+﻿using System.Diagnostics.Contracts;
+
+public class Callout
 {
-    public static void RegistrationOfCallout()
+    public static List<Callout> policesCall = new List<Callout>();
+    
+
+    public static void RegistrationOfCallout(List<Police> polices)
     {
+        Console.Write("Välj hur många poliser som deltog i insatsen: ");
+        int number = int.Parse(Console.ReadLine()+"");
+        for(int i=0; i<number; i++)
+            Console.WriteLine($"{i}. Namn: {polices[i].name}."+ " " + $"U-nummer: {polices[i].serviceNumber}");
+        //for (int i = 0; i < policesCall; i++)
         Console.Write("Välj vilken polis som deltog: ");
-        int policechoice = Convert.ToInt32(Console.ReadLine());
+        string policechoice = (Console.ReadLine()+"");
+
+        policesCall.Add(new Callout(policechoice));
+
+
         Console.Write("Vilken typ av brott: ");             //Hämta index från Crime
         string crime = Console.ReadLine() +"";
         Console.Write("Tidpunkt för brottet med format HH:MM: ");

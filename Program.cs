@@ -7,6 +7,9 @@ using System.Security.Cryptography;
 public class Program
 {
     public static List<Police> polices = new List<Police>();
+
+
+
     static void PolisAdd(List<Police> polices)
     {
         // polices.Add(new Police("Bengt Karlsson", 100145));
@@ -40,8 +43,8 @@ public class Program
             switch (choice)
             {
                 case "1":
-                    Police.PrintPolices(polices);
-                    Callout.RegistrationOfCallout();
+
+                    Callout.RegistrationOfCallout(polices);
                     break;
                 case "2":
                     Report.Reports();
